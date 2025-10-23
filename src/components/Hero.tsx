@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram, Mail, Download } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 
 const Hero = () => {
   const handleContactClick = () => {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Linkedin, Github, Instagram, Send, MapPin, Phone } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram, Send, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {

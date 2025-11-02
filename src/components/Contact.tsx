@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Mail, Linkedin, Github, Instagram, Send, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const Contact = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,7 +15,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Create mailto link with form data
     const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -27,104 +30,75 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4">
-          Get In <span className="text-gradient">Touch</span>
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-          Have a question or want to work together? Feel free to reach out!
-        </p>
+    <section 
+      id="contact" 
+      ref={ref}
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"
+    >
+      <div className="max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-4xl font-bold text-center mb-12"
+        >
+          Get in Touch
+        </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-              </p>
-            </div>
+            <p className="text-gray-300 leading-relaxed">
+              Have a question or want to collaborate? Feel free to reach out. I'm always open to talking about projects or opportunities.
+            </p>
 
-            {/* Contact Details */}
             <div className="space-y-4">
-              <a
-                href="mailto:naizan9846@gmail.com"
-                className="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-lg hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                  <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div>
-                  <p className="font-semibold">Email</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">naizan9846@gmail.com</p>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-lg">
-                <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                  <MapPin className="w-6 h-6 text-green-600 dark:text-green-400" />
-                </div>
-                <div>
-                  <p className="font-semibold">Location</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Kerala, India</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Media Links */}
-            <div>
-              <h4 className="font-semibold mb-4">Connect on Social Media</h4>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/naizannaiz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 bg-white dark:bg-gray-900 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-110 group"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/mohamednaizan/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 bg-white dark:bg-gray-900 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-110 group"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
-                </a>
-                <a
-                  href="https://www.instagram.com/naizz.af/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 bg-white dark:bg-gray-900 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-110 group"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
-                </a>
-              </div>
+              {[
+                { icon: Mail, href: 'mailto:naizan9846@gmail.com', text: 'naizan9846@gmail.com', label: 'Email' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/mohamednaizan/', text: 'LinkedIn Profile', label: 'LinkedIn' },
+                { icon: Github, href: 'https://github.com/naizannaiz', text: 'GitHub Profile', label: 'GitHub' },
+                { icon: Instagram, href: 'https://www.instagram.com/naizz.af/', text: '@naizz.af', label: 'Instagram' },
+                { icon: MapPin, href: '#', text: 'Kerala, India', label: 'Location' },
+              ].map((contact, index) => {
+                const Icon = contact.icon;
+                return (
+                  <a
+                    key={index}
+                    href={contact.href}
+                    target={contact.href.startsWith('http') ? '_blank' : undefined}
+                    rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="flex items-center gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-blue-500/50 transition-colors"
+                  >
+                    <Icon className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <p className="text-xs text-gray-500 uppercase mb-1">{contact.label}</p>
+                      <p className="text-white">{contact.text}</p>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg"
+            className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Your Name
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  Name
                 </label>
                 <input
                   type="text"
@@ -133,14 +107,14 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  placeholder="John Doe"
+                  className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Your Email
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  Email
                 </label>
                 <input
                   type="email"
@@ -149,14 +123,14 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  placeholder="john@example.com"
+                  className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Your Message
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -165,14 +139,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                  placeholder="Tell me about your project..."
+                  className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                  placeholder="Your message..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 shadow-lg"
+                className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" />
                 Send Message
@@ -186,4 +160,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

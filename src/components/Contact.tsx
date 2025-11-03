@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Mail, Linkedin, Github, Instagram, Send, MapPin } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   const [formData, setFormData] = useState({
     name: '',

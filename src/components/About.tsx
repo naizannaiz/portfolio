@@ -1,10 +1,9 @@
-import { GraduationCap, Heart, Target } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { GraduationCap, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section 

@@ -1,4 +1,5 @@
-import { useState, useRef, ReactNode } from 'react';
+import { useState, useRef } from 'react';
+import type { ReactNode } from 'react';
 
 interface Interactive3DCardProps {
   children: ReactNode;

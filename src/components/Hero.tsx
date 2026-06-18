@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Instagram, Mail, ArrowDown } from 'lucide-react';
+import { HeroBackground } from './ui/demo';
 
 const Hero = () => {
   const handleContactClick = () => {
@@ -12,38 +13,27 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-950 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 flex justify-center"
-        >
-          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
-            <img
-              src="/profile.jpg"
-              alt="Mohamed Naizan"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-          </div>
-        </motion.div>
+      {/* Live shader background */}
+      <HeroBackground activeEffect="mesh" speed={0.6} />
+      <div className="max-w-4xl mx-auto text-center relative z-10">
 
         {/* Name */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="font-black uppercase tracking-tight leading-none mb-6 select-none"
+          style={{
+            fontSize: 'clamp(2.2rem, 7vw, 6rem)',
+            color: '#FF4D6D',
+            mixBlendMode: 'overlay',
+            textShadow: 'none',
+            letterSpacing: '-0.02em',
+          }}
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-            Mohamed Naizan
-          </span>
+          Mohamed Naizan
         </motion.h1>
 
         {/* Title */}

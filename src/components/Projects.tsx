@@ -20,10 +20,16 @@ const Projects = () => {
       demo: 'https://copygo.vercel.app/',
     },
     {
-      title: 'AI vs Real Image Classifier',
-      description: 'A machine learning application that classifies images as AI-generated or real using neural networks.',
-      technologies: ['TypeScript', 'Machine Learning', 'Neural Networks'],
-      github: 'https://github.com/naizannaiz/ai-vs-real-classifier',
+      title: 'Swaram Radio',
+      description: 'A web-based college radio station featuring live broadcast streaming, real-time audience reactions, and interactive chat.',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'PM2'],
+      github: 'https://github.com/naizannaiz/swaram-radio',
+    },
+    {
+      title: 'Certificate Maker',
+      description: 'A professional web utility to generate, customize, and issue digital certificates with customizable templates.',
+      technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
+      github: 'https://github.com/naizannaiz/certificate-maker',
     },
     {
       title: 'Karthavya',
@@ -32,16 +38,16 @@ const Projects = () => {
       github: 'https://github.com/naizannaiz/karthavya',
     },
     {
-      title: 'Print Kada',
-      description: 'A college print shop management system for order management and queue handling.',
-      technologies: ['JavaScript', 'Node.js', 'Web Development'],
-      github: 'https://github.com/naizannaiz/printkada',
+      title: 'Secure Image',
+      description: 'An ML-powered system that predicts the optimal chaotic map for image encryption using a trained Random Forest model. Includes MATLAB simulations, Python scripts for data augmentation and model training, and a published research report.',
+      technologies: ['Python', 'MATLAB', 'scikit-learn', 'Random Forest', 'LaTeX', 'Image Processing'],
+      github: 'https://github.com/naizannaiz/secure_image',
     },
     {
-      title: 'Coder Platform',
-      description: 'A coding practice platform with challenges and tutorials.',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/naizannaiz/coder',
+      title: 'Techz Green',
+      description: 'An eco-initiative web platform detailing waste management practices, environmental tips, and green technology solutions.',
+      technologies: ['React', 'Tailwind CSS', 'HTML5', 'CSS3'],
+      github: 'https://github.com/naizannaiz/Techz_green_final',
     },
   ];
 

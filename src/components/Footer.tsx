@@ -1,4 +1,4 @@
-import { Heart, Github, Linkedin, Instagram, Mail, Sparkles } from 'lucide-react';
+import { Heart, Github, Linkedin, Instagram, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -11,15 +11,19 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Sparkles className="w-5 h-5 text-blue-400" />
-              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              <h3
+                className="text-2xl font-black uppercase tracking-tight select-none leading-none"
+                style={{
+                  color: '#ff0909ff',
+                  mixBlendMode: 'difference',
+                  letterSpacing: '-0.02em',
+                }}
+              >
                 Mohamed Naizan
               </h3>
             </div>
-            <p className="text-gray-400 mb-4 leading-relaxed">
-              The one who stands out from the crowd.
-              <br />
-              Building extraordinary solutions through AI and innovation.
+            <p className="text-gray-200 mb-4 leading-relaxed">
+              Exploring
             </p>
             <p className="text-sm text-gray-500">
               Based in Kerala, India

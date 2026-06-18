@@ -18,27 +18,27 @@ const Skills = () => {
     {
       title: 'Programming Languages',
       icon: Code2,
-      skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'HTML5', 'CSS'],
+      skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'MATLAB', 'HTML5', 'CSS3', 'PowerShell'],
     },
     {
       title: 'Data Science & ML',
       icon: Brain,
-      skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'scikit-learn', 'PyTorch', 'Data Mining'],
+      skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'scikit-learn', 'PyTorch', 'Random Forest', 'Image Augmentation', 'Data Mining'],
     },
     {
       title: 'Web Development',
       icon: Palette,
-      skills: ['React.js', 'Node.js', 'Django', 'Tailwind CSS', 'Figma', 'JSON'],
+      skills: ['React.js', 'Next.js', 'Node.js', 'Vite', 'Django', 'Tailwind CSS', 'Canvas API', 'Web Crypto API', 'html-to-image', 'jsPDF', 'Figma'],
     },
     {
       title: 'Databases',
       icon: Database,
-      skills: ['MySQL', 'Firebase', 'Cloud Firestore', 'Data Modeling'],
+      skills: ['MySQL', 'Firebase', 'Cloud Firestore', 'Supabase', 'Data Modeling'],
     },
     {
       title: 'DevOps & Tools',
       icon: Wrench,
-      skills: ['Git', 'GitHub', 'CI/CD', 'Nginx', 'DevOps'],
+      skills: ['Git', 'GitHub', 'PM2', 'CI/CD', 'Nginx', 'LaTeX', 'Overleaf', 'DevOps'],
     },
     {
       title: '3D & Design',
@@ -48,12 +48,12 @@ const Skills = () => {
     {
       title: 'Cloud & Analytics',
       icon: Cloud,
-      skills: ['Big Data', 'Statistical Data Analysis', 'CRM', 'Knowledge Engineering'],
+      skills: ['Big Data', 'Statistical Data Analysis', 'CRM', 'Knowledge Engineering', 'Image Encryption', 'Cryptography'],
     },
     {
       title: 'Soft Skills',
       icon: GitBranch,
-      skills: ['Analytical Skills', 'Team Collaboration', 'Problem Solving', 'Project Management'],
+      skills: ['Analytical Skills', 'Team Collaboration', 'Problem Solving', 'Project Management', 'Research Writing'],
     },
   ];
 

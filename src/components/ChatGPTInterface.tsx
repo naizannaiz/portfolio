@@ -180,6 +180,7 @@ const ChatGPTInterface = ({
       hasStarted.current = true;
       startTypingPrompt(initialPrompt);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialPrompt]);
 
   const scrollToBottom = () => {
@@ -478,7 +479,7 @@ const formatMarkdown = (text: string) => {
   formatted = formatted.replace(/^##\s(.+)$/gm, '<h2 class="text-xl font-semibold mt-4 mb-2 text-gray-100">$1</h2>');
   
   // Bullet points - or •
-  formatted = formatted.replace(/^[\-\•]\s(.+)$/gm, '<div class="flex items-start gap-2 my-1.5"><span class="text-gray-400 mt-1">•</span><span>$1</span></div>');
+  formatted = formatted.replace(/^[-•]\s(.+)$/gm, '<div class="flex items-start gap-2 my-1.5"><span class="text-gray-400 mt-1">•</span><span>$1</span></div>');
   
   // Numbered lists
   formatted = formatted.replace(/^\d+\.\s(.+)$/gm, '<div class="my-1.5">$&</div>');

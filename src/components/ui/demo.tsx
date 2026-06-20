@@ -26,7 +26,6 @@ export function HeroBackground({
           <DotOrbit
             className="w-full h-full"
             speed={speed}
-            intensity={1.5}
           />
         </div>
       )}
@@ -42,7 +41,6 @@ export function HeroBackground({
             <DotOrbit
               className="w-full h-full"
               speed={speed * 1.5}
-              intensity={1.2}
             />
           </div>
         </>

@@ -41,9 +41,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-xl sm:text-2xl text-gray-300 mb-6"
+          className="text-xl sm:text-2xl text-gray-300 mb-6 font-medium tracking-wide"
         >
-          AI Engineering Student
+          Full Stack Developer &amp; AI Engineer
         </motion.h2>
 
         {/* Brief intro */}
@@ -53,10 +53,12 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          Learning and building with AI, machine learning, and web technologies.
+          I build production-ready web applications and intelligent systems —
           <br />
-          Always curious about what's next.
-        </motion.p>
+          from scalable backends and polished UIs to ML models and AI pipelines.
+          <br />
+          <span className="text-gray-500 text-sm italic">Always exploring what's next.</span>
+</motion.p>
 
         {/* CTA Buttons */}
         <motion.div

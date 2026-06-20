@@ -18,7 +18,6 @@ export function HeroBackground({
           className="w-full h-full absolute inset-0"
           colors={["#000000", "#0f172a", "#1e1b4b", "#111827"]}
           speed={speed}
-          backgroundColor="#030712"
         />
       )}
 
@@ -26,8 +25,6 @@ export function HeroBackground({
         <div className="w-full h-full absolute inset-0 bg-gray-950">
           <DotOrbit
             className="w-full h-full"
-            dotColor="#1e3a5f"
-            orbitColor="#0f172a"
             speed={speed}
             intensity={1.5}
           />
@@ -40,13 +37,10 @@ export function HeroBackground({
             className="w-full h-full absolute inset-0"
             colors={["#000000", "#0f172a", "#1e1b4b", "#111827"]}
             speed={speed * 0.5}
-            backgroundColor="#030712"
           />
           <div className="w-full h-full absolute inset-0 opacity-40">
             <DotOrbit
               className="w-full h-full"
-              dotColor="#1e3a5f"
-              orbitColor="#0f172a"
               speed={speed * 1.5}
               intensity={1.2}
             />
